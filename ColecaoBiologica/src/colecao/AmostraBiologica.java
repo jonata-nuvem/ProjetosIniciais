@@ -1,47 +1,54 @@
 package colecao;
 
-//amostras biologicas que entrão na coleção de uma museu// 
+/* amostras biológicas que entram na coleção de um museu
+ * Atributo nomeCientifico - apos identificação da amostra biologica: Canis lupus
+ * Atributo numeroCatalogo - Exemplo: numero 1648: varia de 00001 -- até 500.000, por exemplo
+ * Atributo numeroExemplares - quantidade de exemplares dentro do  numreo 1648: 3 individuos
+*/
+
 public class AmostraBiologica {
-//nomes cientificos apos identificação da amostra biologica: Canis lupus // 
-public String nomecientifico;
-//numero no catalogo Exemplo: numero 1648: varia de 00001 -- até 500.000, por exemplo //
-public int numerocatalogo;
-//numero de exemplares: quantidade de exemplares dentro do  numreo 1648: 3 individuos //
-public int numeroexemplares;
 
-//////////////////////////////////////////////////////////////////////////////////////////////
-//construtor da classe//
-public AmostraBiologica(String nomecientifico, int numerocatalogo, int numeroexemplares, String conservacao, String habitat ){
-	this.nomecientifico = nomecientifico;
-	this.numerocatalogo = numerocatalogo;
-	this.numeroexemplares = numeroexemplares;
+	private String nomeCientifico;
+	private int numeroCatalogo;
+	private int numeroExemplares;
+
+	//Constructor
+	public AmostraBiologica(String nomeCientifico, int numeroCatalogo, int numeroExemplares) {
+		this.nomeCientifico = nomeCientifico;
+		this.numeroCatalogo = numeroCatalogo;
+		this.numeroExemplares = numeroExemplares;
 	}
-//////////////////////////////////////////////////////////////////////////////////////////////////
-//get e sets dos atributos da amostra biológica//
 
-public String getNomecientifico() {
-	return nomecientifico;
-}
+	//gets e sets
+	public String getNomeCientifico() {
+		return nomeCientifico;
+	}
 
-public void setNomecientifico(String nomecientifico) {
-	this.nomecientifico = nomecientifico;
-}
+	public void setNomeCientifico(String nomeCientifico) {
+		this.nomeCientifico = nomeCientifico;
+	}
 
-public int getNumerocatalogo() {
-	return numerocatalogo;
-}
+	public int getNumeroCatalogo() {
+		return numeroCatalogo;
+	}
 
-public void setNumerocatalogo(int numerocatalogo) {
-	this.numerocatalogo = numerocatalogo;
-}
+	public void setNumeroCatalogo(int numeroCatalogo) {
+		this.numeroCatalogo = numeroCatalogo;
+	}
 
-public int getNumeroexemplares() {
-	return numeroexemplares;
-}
+	public int getNumeroExemplares() {
+		return numeroExemplares;
+	}
 
-public void setNumeroexemplares(int numeroexemplares) {
-	this.numeroexemplares = numeroexemplares;
-}
-
+	public void setNumeroExemplares(int numeroExemplares) {
+		this.numeroExemplares = numeroExemplares;
+	}
+	
+	//Quando utilizar o Listar Amostras esse 'toString' não retornará o endereço de memória e sim os dados inseridos na lista
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Nome Científico: " + nomeCientifico + " | Número Catálogo: " + numeroCatalogo + " | Número Exemplares: " + numeroExemplares + "\n");
+		return sb.toString();
+	}
 
 }
